@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} MyView {% endblock %}
+{% block 'main' %}
+<ul>
+    {% for user in my_model %}
+        <li>
+            {{ user.username }} 
+            {% if user.email %}
+            {{ user.email }}
+            {% endif %}
+        </li>
+    {% empty %}
+        <li>Nenhum usuário encontrado.</li>
+    {% endfor %}
+</ul>
+{% endblock  %}
+    
